@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founder's Personal Branding Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 50vh;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .flow-arrow {
+            position: relative;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .flow-arrow::after {
+            content: '▼';
+            font-size: 1.5rem;
+            color: #FFB400;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#00A6ED] mb-2">The Architecture of Influence</h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">A visual playbook for building Dr. Bahmba's personal brand across digital platforms.</p>
+        </header>
+
+        <section id="pillars" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">The Four Pillars of Brand Identity</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4 text-[#00A6ED]">🚀</div>
+                    <h3 class="text-xl font-bold mb-2">Science & Space</h3>
+                    <p class="text-gray-600">Demystifying the complex and inspiring the next generation of innovators.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4 text-[#A239CA]">💡</div>
+                    <h3 class="text-xl font-bold mb-2">Entrepreneurship</h3>
+                    <p class="text-gray-600">Sharing insights on building and scaling ventures in specialized, high-impact fields.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4 text-[#FF3C38]">❤️</div>
+                    <h3 class="text-xl font-bold mb-2">Social Impact</h3>
+                    <p class="text-gray-600">Driving positive change through community building and targeted initiatives.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4 text-[#FFB400]">👤</div>
+                    <h3 class="text-xl font-bold mb-2">Life & Inspiration</h3>
+                    <p class="text-gray-600">Connecting on a human level through authentic storytelling and personal journeys.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy" class="mb-16">
+             <h2 class="text-3xl font-bold text-center mb-8">Content Strategy Breakdown</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-center mb-4">Core Pillar Focus</h3>
+                     <p class="text-center text-gray-600 mb-4">This chart shows the strategic weight given to each core brand pillar, balancing professional expertise with personal storytelling to create a well-rounded and authentic brand presence.</p>
+                    <div class="chart-container">
+                        <canvas id="pillarFocusChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-center mb-4">Content Themes by Engagement Potential</h3>
+                    <p class="text-center text-gray-600 mb-4">This chart ranks the 13 key content themes by their estimated potential to drive audience engagement, helping to prioritize content creation efforts for maximum impact.</p>
+                    <div class="chart-container" style="height: 450px; max-height: 60vh;">
+                        <canvas id="engagementChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="platforms" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Platform Allocation & Content Mix</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <p class="text-center text-gray-600 mb-6 max-w-4xl mx-auto">Different platforms require different approaches. This visualization breaks down the ideal content mix for LinkedIn, YouTube, and Instagram, aligning each platform's strengths with the founder's core messaging pillars.</p>
+                <div class="chart-container" style="max-width: 900px;">
+                    <canvas id="platformMixChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section id="flywheel" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">The Content Repurposing Flywheel</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                 <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Maximize reach and minimize effort by repurposing a single piece of core content across multiple platforms. This flywheel illustrates how a primary YouTube video can seed an entire ecosystem of related content.</p>
+                <div class="flex flex-col items-center">
+                    <div class="bg-[#A239CA] text-white p-4 rounded-lg shadow-md w-full max-w-sm text-center">
+                        <h4 class="font-bold text-lg">1. Primary Content</h4>
+                        <p>Long-form YouTube Video (e.g., "Beyond the Telescope" episode)</p>
+                    </div>
+
+                    <div class="flow-arrow"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+                        <div class="bg-[#00A6ED] text-white p-4 rounded-lg shadow-md text-center">
+                            <h4 class="font-bold">2. LinkedIn Post</h4>
+                            <p>Write an article on key insights & professional takeaways.</p>
+                        </div>
+                        <div class="bg-[#FF3C38] text-white p-4 rounded-lg shadow-md text-center">
+                            <h4 class="font-bold">3. Instagram Reel</h4>
+                            <p>Create a 60s highlight clip of the most engaging moment.</p>
+                        </div>
+                         <div class="bg-[#FFB400] text-white p-4 rounded-lg shadow-md text-center">
+                            <h4 class="font-bold">4. Instagram Post</h4>
+                            <p>Share a powerful quote from the video as a graphic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gemini-feature" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">✨ AI-Powered Content Idea Generator ✨</h2>
+            <div class="bg-white p-6 rounded-xl shadow-lg max-w-2xl mx-auto">
+                <p class="text-center text-gray-600 mb-6">Unleash new content possibilities! Select a theme and platform to get fresh ideas for your personal brand.</p>
+                <div class="mb-4">
+                    <label for="contentTheme" class="block text-gray-700 text-sm font-bold mb-2">Select Content Theme:</label>
+                    <select id="contentTheme" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="Connecting youth through unique employment opportunity into astronomy and space science">Connecting Youth through Unique Employment Opportunity</option>
+                        <option value="Youtube series - Beyond the telescope, to talk about life experiences, science, and society, which truly resembles the tile beyond astronomy and space science. About celebrating life stories">YouTube Series - Beyond the Telescope</option>
+                        <option value="Myths & their origin and mythbusing">Myths & Their Origin and Mythbusting</option>
+                        <option value="Wildlife vlogging and field experiences">Wildlife Vlogging and Field Experiences</option>
+                        <option value="3 idiots classroom series for the capacity building of teachers and educators">3 Idiots Classroom Series</option>
+                        <option value="Impact stories from the companies and organisations of the founder">Impact Stories from Companies/Organisations</option>
+                        <option value="Thought leadership in Entrepreneurship into science, space education, and astronomy">Thought Leadership in Entrepreneurship</option>
+                        <option value="The sky tour - on field stargazing and astrophotography vlogs from different locations across India">The Sky Tour - Stargazing & Astrophotography</option>
+                        <option value="Social initiatives and impact stories under the NGO headed by the founder">Social Initiatives and NGO Impact Stories</option>
+                        <option value="Project announcements">Project Announcements</option>
+                        <option value="Updates from conferences">Updates from Conferences</option>
+                        <option value="Meeting people and connections">Meeting People and Connections</option>
+                        <option value="Policies around that influences the industry in which the founder is focusing">Policies Influencing the Industry</option>
+                    </select>
+                </div>
+                <div class="mb-6">
+                    <label for="socialPlatform" class="block text-gray-700 text-sm font-bold mb-2">Select Social Media Platform:</label>
+                    <select id="socialPlatform" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        <option value="LinkedIn">LinkedIn</option>
+                        <option value="YouTube">YouTube</option>
+                        <option value="Instagram">Instagram</option>
+                    </select>
+                </div>
+                <button id="generateIdeasBtn" class="bg-[#00A6ED] hover:bg-[#008ACD] text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline w-full transition-colors duration-300">
+                    Generate Ideas ✨
+                </button>
+                <div id="loadingIndicator" class="hidden text-center mt-4 text-gray-500">Generating ideas...</div>
+                <div id="generatedContent" class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200 text-gray-700 min-h-[100px] flex items-center justify-center text-center">
+                    Your generated content ideas will appear here.
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-300">
+            <p class="text-gray-600">Crafted to visualize the path to authentic and impactful personal branding.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const vibrantPalette = {
+                blue: '#00A6ED',
+                yellow: '#FFB400',
+                red: '#FF3C38',
+                purple: '#A239CA',
+                lightGray: '#EFEFEF',
+                darkGray: '#333333'
+            };
+
+            function wrapLabel(str, maxWidth) {
+                if (str.length <= maxWidth) {
+                    return str;
+                }
+                const words = str.split(' ');
+                let lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxWidth) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            }
+
+            const CHART_TOOLTIP_CONFIG = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            };
+
+            const pillarCtx = document.getElementById('pillarFocusChart')?.getContext('2d');
+            if (pillarCtx) {
+                new Chart(pillarCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Science & Space', 'Entrepreneurship', 'Social Impact', 'Life & Inspiration'],
+                        datasets: [{
+                            label: 'Strategic Focus',
+                            data: [90, 80, 75, 65],
+                            backgroundColor: 'rgba(0, 166, 237, 0.2)',
+                            borderColor: vibrantPalette.blue,
+                            pointBackgroundColor: vibrantPalette.blue,
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: vibrantPalette.blue
+                        }]
+                    },
+                    options: {
+                        ...CHART_TOOLTIP_CONFIG,
+                        responsive: true,
+                        maintainAspectRatio: false,
+                         scales: {
+                            r: {
+                                angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                                grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                                pointLabels: { font: { size: 14 } },
+                                suggestedMin: 0,
+                                suggestedMax: 100,
+                                ticks: {
+                                    backdropColor: 'transparent',
+                                    stepSize: 25
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const engagementCtx = document.getElementById('engagementChart')?.getContext('2d');
+            if (engagementCtx) {
+                const engagementLabels = [
+                    'The Sky Tour Vlogs',
+                    'Wildlife Vlogging',
+                    'Youth Employment Stories',
+                    '"Beyond the Telescope" Series',
+                    'Mythbusting',
+                    'Impact Stories (NGO & Co.)',
+                    'Meeting People & Connections',
+                    '"3 Idiots Classroom" Series',
+                    'Project Announcements',
+                    'Thought Leadership',
+                    'Conference Updates',
+                    'Policy Analysis'
+                ];
+                
+                new Chart(engagementCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: engagementLabels.map(label => wrapLabel(label, 18)),
+                        datasets: [{
+                            label: 'Engagement Score',
+                            data: [95, 92, 88, 85, 82, 80, 78, 75, 70, 65, 60, 55],
+                            backgroundColor: [
+                                vibrantPalette.blue, vibrantPalette.purple, vibrantPalette.red, vibrantPalette.yellow,
+                                vibrantPalette.blue, vibrantPalette.purple, vibrantPalette.red, vibrantPalette.yellow,
+                                vibrantPalette.blue, vibrantPalette.purple, vibrantPalette.red, vibrantPalette.yellow
+                            ],
+                            borderColor: 'rgba(255, 255, 255, 0)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        ...CHART_TOOLTIP_CONFIG,
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            ...CHART_TOOLTIP_CONFIG.plugins,
+                            legend: {
+                                display: false
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                  display: false
+                                }
+                            },
+                            y: {
+                                grid: {
+                                    display: false
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const platformCtx = document.getElementById('platformMixChart')?.getContext('2d');
+            if (platformCtx) {
+                new Chart(platformCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['LinkedIn', 'YouTube', 'Instagram'],
+                        datasets: [
+                            {
+                                label: 'Thought Leadership',
+                                data: [60, 15, 5],
+                                backgroundColor: vibrantPalette.blue,
+                            },
+                            {
+                                label: 'In-Depth Storytelling',
+                                data: [20, 70, 10],
+                                backgroundColor: vibrantPalette.purple,
+                            },
+                            {
+                                label: 'Visuals & Snippets',
+                                data: [10, 15, 65],
+                                backgroundColor: vibrantPalette.red,
+                            },
+                            {
+                                label: 'Community & Networking',
+                                data: [10, 0, 20],
+                                backgroundColor: vibrantPalette.yellow,
+                            },
+                        ]
+                    },
+                    options: {
+                        ...CHART_TOOLTIP_CONFIG,
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                stacked: true,
+                                grid: { display: false }
+                            },
+                            y: {
+                                stacked: true,
+                                grid: { display: false },
+                                ticks: {
+                                    callback: function(value) {
+                                        return value + '%'
+                                    }
+                                }
+                            }
+                        },
+                         plugins: {
+                            ...CHART_TOOLTIP_CONFIG.plugins,
+                            title: {
+                                display: true,
+                                text: 'Ideal Content Distribution by Platform (%)'
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Gemini API Integration Logic
+            const generateIdeasBtn = document.getElementById('generateIdeasBtn');
+            const contentThemeSelect = document.getElementById('contentTheme');
+            const socialPlatformSelect = document.getElementById('socialPlatform');
+            const generatedContentDiv = document.getElementById('generatedContent');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+
+            generateIdeasBtn.addEventListener('click', async () => {
+                const selectedTheme = contentThemeSelect.value;
+                const selectedPlatform = socialPlatformSelect.value;
+
+                loadingIndicator.classList.remove('hidden');
+                generatedContentDiv.innerHTML = ''; // Clear previous content
+
+                const prompt = `Act as a social media content strategist for a founder's personal brand. Generate 3-5 specific, actionable, and engaging content ideas for the theme "${selectedTheme}" on the platform "${selectedPlatform}". Focus on unique angles relevant to the founder's expertise in science, space, entrepreneurship, and social impact.`;
+
+                try {
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = "";
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        generatedContentDiv.innerHTML = text.replace(/\n/g, '<br>'); // Display newlines as breaks
+                    } else {
+                        generatedContentDiv.innerHTML = 'Could not generate ideas. Please try again.';
+                    }
+                } catch (error) {
+                    generatedContentDiv.innerHTML = 'An error occurred: ' + error.message;
+                    console.error('Error calling Gemini API:', error);
+                } finally {
+                    loadingIndicator.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
